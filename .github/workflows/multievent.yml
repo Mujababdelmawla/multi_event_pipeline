@@ -11,6 +11,7 @@ on:
             -test
 jobs:
     on-push:
+        if: github.event_name=='push'
         runs-on: ubuntu-latest
 
         steps:
@@ -20,6 +21,7 @@ jobs:
 
               
     on-pull-request:
+        if: github.event_name=='pull-reguest'
         runs-on: ubuntu-latest
 
         steps:
