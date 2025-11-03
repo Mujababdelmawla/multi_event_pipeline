@@ -5,12 +5,26 @@ on:
             - main 
             - test
 
+    pull_request:
+        branches:
+            -main 
+            -test
 jobs:
     on-push:
+
+        if: github.event_name=='push'
         runs-on: ubuntu-latest
 
         steps:
             - name: running on main/test
               run: echo "running on main/test"
 
-        
+
+              
+    on-pull-request:
+        if: github.event_name=='pull-reguest'
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: running on pull request
+              run: echo "running on pull request"
