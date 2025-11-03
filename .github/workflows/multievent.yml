@@ -1,0 +1,16 @@
+name: multievent workflow
+on:
+    push: 
+        branches:
+            - main 
+            - test
+
+jobs:
+    on-push:
+        runs-on: ubuntu latest
+
+        steps:
+            - name: running on main/test
+              run: echo "running on main/test"
+
+        
